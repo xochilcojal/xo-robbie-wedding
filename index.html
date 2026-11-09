@@ -1,0 +1,617 @@
+<title>Xo &amp; Robbie Wedding</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500&family=Host+Grotesk:wght@300;400;500&family=La+Belle+Aurore&display=swap" rel="stylesheet">
+<style>
+/* Layout: full-bleed maroon hero (save-the-date) stacked above a cream two-column details section and a cream RSVP section with a bordered form card. Single committed palette — a warm Italian-countryside dusk against parchment. */
+:root{
+  --maroon:#722b32;
+  --cream:#ebe8e4;
+  --cream-rule:#afaba0;
+  --ink:#2d2b25;
+  --ink-soft:#4a473f;
+  --card-border:#afaba0;
+  --pad-x:3rem;
+  color-scheme: dark;
+}
+
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:"Host Grotesk", Arial, sans-serif;
+  font-weight:300;
+  padding-left:max(0px, env(safe-area-inset-left,0px));
+  padding-right:max(0px, env(safe-area-inset-right,0px));
+}
+
+a{color:inherit;}
+
+.script{
+  font-family:"La Belle Aurore", cursive;
+  font-weight:400;
+}
+.label{
+  font-family:"Cormorant Garamond", Georgia, serif;
+  font-weight:300;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+}
+
+/* ---------- HERO ---------- */
+.hero{
+  position:relative;
+  background:var(--maroon) url('hero-bg.webp') center/cover no-repeat;
+  color:var(--cream);
+  height:100vh;
+  overflow:hidden;
+  display:flex;
+  padding:3rem env(safe-area-inset-left,0px) 3rem env(safe-area-inset-right,0px);
+}
+.hero-bounds{
+  position:relative;
+  flex:1;
+  min-height:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  gap:.15rem;
+  max-width:940px;
+  width:100%;
+  margin:0 auto;
+  padding:0 var(--pad-x);
+}
+.lang-switch{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  right:max(1rem, env(safe-area-inset-right,0px));
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:.75rem;
+  font-family:"Host Grotesk", Arial, sans-serif;
+  font-size:.75rem;
+  letter-spacing:.05em;
+}
+.lang-switch a{
+  color:var(--cream);
+  opacity:.55;
+  text-decoration:none;
+  text-transform:uppercase;
+}
+.lang-switch a:hover{opacity:.85;}
+.lang-switch a.active{opacity:1; text-decoration:underline; text-underline-offset:3px;}
+
+.hero-row{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  row-gap:.5rem;
+}
+.hero-top{
+  justify-content:space-between;
+  width:100%;
+  font-size:clamp(1rem, 2.2vw, 1.15rem);
+}
+.hero-bottom{
+  justify-content:space-between;
+  width:100%;
+  align-items:center;
+  font-size:clamp(1.1rem, 3vw, 1.4rem);
+}
+.hero-bottom .dot{
+  font-family:"Host Grotesk", Arial, sans-serif;
+  opacity:.7;
+}
+.hero-video-wrap{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:0;
+  overflow:hidden;
+}
+.hero-video{
+  height:100%;
+  width:auto;
+  max-width:100%;
+  object-fit:cover;
+  display:block;
+}
+
+/* ---------- DETAILS ---------- */
+.details{
+  padding:4rem var(--pad-x);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:3rem 4rem;
+  max-width:940px;
+  margin:0 auto;
+}
+.col{min-width:0;}
+
+.intro{
+  font-size:24px;
+  line-height:1.4;
+  margin:0 0 3rem;
+}
+
+.program-heading{
+  font-size:1.1rem;
+  margin:0 0 1.5rem;
+}
+
+.program-row{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.9rem 0;
+  border-bottom:1px solid var(--cream-rule);
+  font-size:.95rem;
+}
+.program-row:first-of-type{border-top:1px solid var(--cream-rule);}
+.program-time{font-variant-numeric:tabular-nums; color:var(--ink-soft);}
+.program-desc{text-align:right;}
+
+.info-block + .info-block{margin-top:3rem;}
+.info-block h2{
+  font-size:1.1rem;
+  margin:0 0 .6rem;
+}
+.info-block p{
+  margin:0;
+  font-size:.95rem;
+  line-height:1.6;
+  color:var(--ink-soft);
+  max-width:46ch;
+}
+.info-block a{text-decoration:underline; text-underline-offset:2px;}
+
+.section-divider{
+  grid-column:1/-1;
+  display:block;
+  max-width:280px;
+  width:100%;
+  height:auto;
+  margin:2rem auto 0;
+}
+
+/* ---------- RSVP ---------- */
+.rsvp{
+  padding:4rem var(--pad-x);
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px 2rem;
+  max-width:940px;
+  margin:0 auto;
+}
+.rsvp-left{display:flex; flex-direction:column; gap:18px; min-width:0; padding:0.75rem 0 2rem;}
+.rsvp-heading{
+  font-size:24px;
+  line-height:1.2;
+  margin:0;
+}
+.rsvp-left p{
+  margin:0;
+  font-size:.95rem;
+  line-height:1.6;
+  color:var(--ink-soft);
+  max-width:42ch;
+}
+.rsvp-form-wrap{min-width:0;}
+.field{margin-bottom:1.75rem;}
+.field label{
+  display:block;
+  font-size:.8rem;
+  letter-spacing:.03em;
+  margin-bottom:.5rem;
+}
+.field input[type="text"]{
+  width:100%;
+  font:inherit;
+  font-size:.85rem;
+  padding:.65rem .75rem;
+  border:1px solid var(--card-border);
+  border-radius:14px;
+  background:transparent;
+  color:var(--ink);
+}
+.field input[type="text"]::placeholder{color:#8a877d;}
+.field input[type="text"]:disabled{opacity:.45; cursor:not-allowed;}
+.checkline{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  font-size:.9rem;
+  margin-bottom:.6rem;
+}
+.checkline input{accent-color:var(--ink); width:15px; height:15px; color-scheme:light;}
+
+.rsvp-submit{
+  width:100%;
+  background:var(--ink);
+  color:var(--cream);
+  border:none;
+  border-radius:14px;
+  padding:.9rem 1rem;
+  font-family:"Host Grotesk", Arial, sans-serif;
+  letter-spacing:.08em;
+  font-size:14px;
+  cursor:pointer;
+}
+.rsvp-submit:hover{opacity:.9;}
+.rsvp-submit:focus-visible, a:focus-visible, input:focus-visible{outline:2px solid var(--ink); outline-offset:2px;}
+
+.hp-field{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;}
+
+.switch-field{display:flex; align-items:center; justify-content:space-between; gap:.7rem; font-size:13px; margin-bottom:.875rem;}
+.switch{position:relative; display:inline-block; cursor:pointer; flex-shrink:0;}
+.switch input{position:absolute; opacity:0; width:100%; height:100%; margin:0; cursor:pointer;}
+.switch-track{
+  display:flex;
+  align-items:center;
+  width:38px;
+  height:22px;
+  border-radius:999px;
+  background:#c9c5ba;
+  transition:background .15s ease;
+}
+.switch-thumb{
+  display:block;
+  width:16px;
+  height:16px;
+  margin:0 0 0 3px;
+  border-radius:50%;
+  background:var(--cream);
+  transition:transform .15s ease;
+}
+.switch input:checked + .switch-track{background:var(--ink);}
+.switch input:checked + .switch-track .switch-thumb{transform:translateX(16px);}
+.switch input:focus-visible + .switch-track{outline:2px solid var(--ink); outline-offset:2px;}
+
+@media (max-width:991px){
+  :root{--pad-x:2rem;}
+  .details, .rsvp{
+    grid-template-columns:1fr;
+    max-width:450px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:3rem;
+    padding-bottom:3rem;
+  }
+  .hero-bounds{max-width:450px; justify-content:center; gap:1.5rem;}
+  .hero-video-wrap{flex:none; justify-content:flex-start;}
+  .hero-video{width:calc(100% - 10px);}
+  .rsvp-left{padding:0;}
+  .program-desc{font-size:14px;}
+}
+</style>
+
+<section class="hero site-section">
+  <nav class="lang-switch" aria-label="Language">
+    <a href="#en" data-lang-link="en">EN</a>
+    <a href="#es" data-lang-link="es">ES</a>
+    <a href="#it" data-lang-link="it">IT</a>
+  </nav>
+  <div class="hero-bounds">
+    <div class="hero-row hero-top label">
+      <span data-i18n="hero.save">Save</span><span data-i18n="hero.the">the</span><span data-i18n="hero.date">date</span>
+    </div>
+    <div class="hero-video-wrap">
+      <video class="hero-video" src="hero-video.mp4" autoplay muted loop playsinline></video>
+    </div>
+    <div class="hero-row hero-bottom script">
+      <span data-i18n="hero.dateline">April 16 2027</span><span class="dot">&middot;</span><span>Tenuta Monacelle</span>
+    </div>
+  </div>
+</section>
+
+<section class="details site-section">
+  <div class="col">
+    <p class="intro script" data-i18n="intro">We are so happy to invite you to our wedding celebration &lt;3</p>
+
+    <h2 class="program-heading label" data-i18n="program.heading">Program</h2>
+    <div class="program-row">
+      <span class="program-time">12:00</span>
+      <span class="program-desc" data-i18n="program.row1">Marriage in City Hall of Monopoli</span>
+    </div>
+    <div class="program-row">
+      <span class="program-time">13:30</span>
+      <span class="program-desc" data-i18n="program.row2">Arrival &amp; Apperitivo at Tenuta Monacelle</span>
+    </div>
+    <div class="program-row">
+      <span class="program-time">14:30</span>
+      <span class="program-desc" data-i18n="program.row3">Food, drinks, and dance&hellip;</span>
+    </div>
+    <div class="program-row">
+      <span class="program-time">22:00</span>
+      <span class="program-desc" data-i18n="program.row4">End of the celebration</span>
+    </div>
+  </div>
+
+  <div class="col">
+    <div class="info-block">
+      <h2 class="label" data-i18n="venue.heading">Venue</h2>
+      <p data-i18n="venue.body">Our celebration will take place in Tenuta Monacelle in Monopoli, Italy. The celebration will be outdoors, so expect fresh air, a terrace, and hopefully warm weather.</p>
+    </div>
+    <div class="info-block">
+      <h2 class="label" data-i18n="dress.heading">Dress code</h2>
+      <p data-i18n="dress.body">Garden party casual dressy, semi formal but generally how you feel good. It might get chilly during the night and we'll be outdoors so bring something to keep you warm.</p>
+    </div>
+    <div class="info-block">
+      <h2 class="label" data-i18n="parking.heading">Parking &amp; Directions</h2>
+      <p data-i18n-html="parking.body">There is free parking available on-site. There will be a shuttle service, from Monopoli center to the venue and back.
+      Location to <a href="https://maps.app.goo.gl/Yw2qU6hMdFivCy9P9" target="_blank" rel="noopener">Tenuta Monacelle</a>. Location to <a href="https://maps.app.goo.gl/YQhrdPm1NNVHQfzG8" target="_blank" rel="noopener">city hall</a>.</p>
+    </div>
+  </div>
+  <img class="section-divider" src="section-divider.svg" alt="" aria-hidden="true">
+</section>
+
+<section class="rsvp site-section">
+  <div class="rsvp-left">
+    <h2 class="rsvp-heading script" data-i18n="rsvp.heading">Let us know if you can join us.</h2>
+    <p data-i18n="rsvp.p1">We would appreciate it if you could inform us of your availability to join us by the latest February 1, 2027.</p>
+    <p data-i18n="rsvp.p2">This is a one person invitation, we appreciate if you can write only your details.</p>
+  </div>
+
+  <div class="rsvp-form-wrap">
+    <form id="rsvp-form">
+      <div class="field hp-field" aria-hidden="true">
+        <label for="website">Website</label>
+        <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
+      </div>
+
+      <div class="field">
+        <label for="full-name" data-i18n="form.name">Full name</label>
+        <input type="text" id="full-name" name="full-name" required>
+      </div>
+
+      <div class="field switch-field">
+        <span data-i18n="form.addGuest">Add another guest</span>
+        <label class="switch">
+          <input type="checkbox" id="add-guest-toggle">
+          <span class="switch-track"><span class="switch-thumb"></span></span>
+        </label>
+      </div>
+
+      <div class="field">
+        <label data-i18n="form.coming">Are you coming?</label>
+        <label class="checkline"><input type="checkbox" id="coming-yes" name="coming" value="yes"> <span data-i18n="form.comingYes">Absolutely, wouldn't miss it!</span></label>
+        <label class="checkline"><input type="checkbox" id="coming-no" name="coming" value="no"> <span data-i18n="form.comingNo">Sadly, I cannot make it</span></label>
+      </div>
+
+      <div class="field">
+        <label for="dietary" data-i18n="form.dietaryLabel">Let us know if you have any dietary restrictions.</label>
+        <input type="text" id="dietary" name="dietary" placeholder="Vegetarian, no fish, alergic to nuts..." data-i18n-placeholder="form.dietaryPlaceholder">
+      </div>
+
+      <div class="field">
+        <label for="song" data-i18n="form.song">Nominate a song for our playlist!</label>
+        <input type="text" id="song" name="song">
+      </div>
+
+      <div class="field guest2-field" id="guest2-name-field" hidden>
+        <label for="guest2-name" data-i18n="form.guestName">Guest's full name</label>
+        <input type="text" id="guest2-name" name="guest2-name">
+      </div>
+
+      <div class="field guest2-field" id="guest2-dietary-field" hidden>
+        <label for="guest2-dietary" data-i18n="form.guestDietaryLabel">Let us know if your guest has any dietary restrictions.</label>
+        <input type="text" id="guest2-dietary" name="guest2-dietary" placeholder="Vegetarian, no fish, alergic to nuts..." data-i18n-placeholder="form.dietaryPlaceholder">
+      </div>
+
+      <button type="submit" class="rsvp-submit" data-i18n="form.submit">RSVP</button>
+    </form>
+  </div>
+</section>
+
+<script>
+var translations = {
+  en: {
+    "hero.save":"Save", "hero.the":"the", "hero.date":"date",
+    "hero.dateline":"April 16 2027",
+    "intro":"We are so happy to invite you to our wedding celebration <3",
+    "program.heading":"Program",
+    "program.row1":"Civil Ceremony at Monopoli city hall",
+    "program.row2":"Arrival & Apperitivo at Tenuta Monacelle",
+    "program.row3":"Food, drinks, and dance…",
+    "program.row4":"End of the celebration",
+    "venue.heading":"Venue",
+    "venue.body":"Our celebration will take place in Tenuta Monacelle in Monopoli, Italy. The celebration will be outdoors, so expect fresh air, a terrace, and hopefully warm weather.",
+    "dress.heading":"Dress code",
+    "dress.body":"Garden party casual dressy, semi formal but generally how you feel good. It might get chilly during the night and we'll be outdoors so bring something to keep you warm.",
+    "parking.heading":"Parking & Directions",
+    "parking.body":"There is free parking available on-site. We will organize a shuttle service from Monopoli center to the venue and back. Closer to the date, we will let you know the details.<br><br>Location to <a href=\"https://maps.app.goo.gl/Yw2qU6hMdFivCy9P9\" target=\"_blank\" rel=\"noopener\">Tenuta Monacelle</a>. Location to <a href=\"https://maps.app.goo.gl/YQhrdPm1NNVHQfzG8\" target=\"_blank\" rel=\"noopener\">city hall</a>.",
+    "rsvp.heading":"Let us know if you can join us.",
+    "rsvp.p1":"We would appreciate it if you could inform us of your availability to join us by the latest February 1, 2027.",
+    "rsvp.p2":"If your invitation includes a plus one, feel free to add their details below.",
+    "form.name":"Full name",
+    "form.addGuest":"Add another guest",
+    "form.guestName":"Guest's full name",
+    "form.coming":"Are you coming?",
+    "form.comingYes":"Absolutely, wouldn't miss it!",
+    "form.comingNo":"Sadly, I cannot make it",
+    "form.dietaryLabel":"Let us know if you have any dietary restrictions.",
+    "form.guestDietaryLabel":"Let us know if your guest has any dietary restrictions.",
+    "form.dietaryPlaceholder":"Vegetarian, no fish, alergic to nuts...",
+    "form.song":"Nominate a song for our playlist!",
+    "form.submit":"RSVP",
+    "form.thanks":"Thank you!"
+  },
+  es: {
+    "hero.save":"Reserva", "hero.the":"la", "hero.date":"fecha",
+    "hero.dateline":"16 de abril 2027",
+    "intro":"Estamos muy felices de invitarte a nuestro matrimonio <3",
+    "program.heading":"Programa",
+    "program.row1":"Ceremonia Civil en el Municipio de Monopoli",
+    "program.row2":"Llegada y aperitivo en Tenuta Monacelle",
+    "program.row3":"Comida, bebidas y baile…",
+    "program.row4":"Fin de la celebración",
+    "venue.heading":"Lugar",
+    "venue.body":"Nuestra celebración tendrá lugar en Tenuta Monacelle, en Monópoli, Italia. Será al aire libre, así que espera un espacio al aire libre, una terraza y un clima cálido.",
+    "dress.heading":"Vestimenta",
+    "dress.body":"Semi formal, pero sobre todo como te sientas cómodo. La temperatura tiende a bajar durante la noche y estaremos al aire libre, así que trae algo para abrigarte.",
+    "parking.heading":"Estacionamiento y cómo llegar",
+    "parking.body":"Hay estacionamiento gratuito disponible en el lugar. Organizaremos un servicio de traslado desde el centro de Monópoli hasta el lugar y de regreso; más cerca de la fecha, te haremos saber los detalles.<br><br>Ubicación de <a href=\"https://maps.app.goo.gl/Yw2qU6hMdFivCy9P9\" target=\"_blank\" rel=\"noopener\">Tenuta Monacelle</a>. Ubicación del <a href=\"https://maps.app.goo.gl/YQhrdPm1NNVHQfzG8\" target=\"_blank\" rel=\"noopener\">município de Monopoli</a>.",
+    "rsvp.heading":"Confirma si puedes asistir",
+    "rsvp.p1":"Te agradecemos que nos informes de tu disponibilidad antes del 1 de febrero de 2027.",
+    "rsvp.p2":"Si tu invitación incluye un acompañante, puedes agregar sus datos abajo.",
+    "form.name":"Nombre completo",
+    "form.addGuest":"Agregar otro invitado",
+    "form.guestName":"Nombre completo del invitado",
+    "form.coming":"¿Vendrás?",
+    "form.comingYes":"¡Claro, no me lo perdería!",
+    "form.comingNo":"Lamentablemente, no podré asistir",
+    "form.dietaryLabel":"Cuéntanos si tienes alguna restricción alimentaria.",
+    "form.guestDietaryLabel":"Cuéntanos si tu invitado tiene alguna restricción alimentaria.",
+    "form.dietaryPlaceholder":"Vegetariano, sin pescado, alérgico a nueces...",
+    "form.song":"¡Propon una canción para nuestra playlist!",
+    "form.submit":"Confirmar",
+    "form.thanks":"¡Gracias!"
+  },
+  it: {
+    "hero.save":"Salva", "hero.the":"la", "hero.date":"data",
+    "hero.dateline":"16 aprile 2027",
+    "intro":"Siamo così felici di invitarvi alla nostra celebrazione di matrimonio <3",
+    "program.heading":"Programma",
+    "program.row1":"Matrimonio civile al comune di Monopoli",
+    "program.row2":"Arrivo e aperitivo a Tenuta Monacelle",
+    "program.row3":"Cibo, bevande e balli…",
+    "program.row4":"Fine della celebrazione",
+    "venue.heading":"Luogo",
+    "venue.body":"La nostra celebrazione si svolgerà a Tenuta Monacelle, a Monopoli. Sarà all'aperto, quindi aspettati uno spazio all'aperto, una terrazza e un clima caldo.",
+    "dress.heading":"Abbigliamento",
+    "dress.body":"Stile garden party, semi elegante ma soprattutto come vi sentite a vostro agio. La temperatura tende a scendere durante la notte e saremo all'aperto, quindi porta qualcosa per coprirti.",
+    "parking.heading":"Parcheggio e indicazioni",
+    "parking.body":"È disponibile un parcheggio gratuito in loco. Organizzeremo un servizio navetta dal centro di Monopoli al luogo dell'evento e ritorno; più vicino alla data, vi faremo sapere i dettagli.<br><br>Posizione di <a href=\"https://maps.app.goo.gl/Yw2qU6hMdFivCy9P9\" target=\"_blank\" rel=\"noopener\">Tenuta Monacelle</a>. Posizione del <a href=\"https://maps.app.goo.gl/YQhrdPm1NNVHQfzG8\" target=\"_blank\" rel=\"noopener\">municipio</a>.",
+    "rsvp.heading":"Facci sapere se puoi unirti a noi.",
+    "rsvp.p1":"Ti saremmo grati se ci comunicassi la tua disponibilità entro il 1° febbraio 2027.",
+    "rsvp.p2":"Se verrai accompagnato/a, faccelo sapere qui sotto.",
+    "form.name":"Nome completo",
+    "form.addGuest":"Aggiungi un altro ospite",
+    "form.guestName":"Nome completo dell'ospite",
+    "form.coming":"Verrai?",
+    "form.comingYes":"Assolutamente, non me lo perderei!",
+    "form.comingNo":"Purtroppo non potrò esserci",
+    "form.dietaryLabel":"Facci sapere se hai restrizioni alimentari.",
+    "form.guestDietaryLabel":"Facci sapere se il tuo ospite ha restrizioni alimentari.",
+    "form.dietaryPlaceholder":"Vegetariano, niente pesce, allergico alle noci...",
+    "form.song":"Proponi una canzone per la nostra playlist!",
+    "form.submit":"Conferma",
+    "form.thanks":"Grazie!"
+  }
+};
+
+function currentLang(){
+  var h = (location.hash || '').replace('#','').toLowerCase();
+  return translations[h] ? h : 'en';
+}
+
+function applyLang(lang){
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var key = el.getAttribute('data-i18n');
+    if(translations[lang][key] !== undefined) el.textContent = translations[lang][key];
+  });
+  document.querySelectorAll('[data-i18n-html]').forEach(function(el){
+    var key = el.getAttribute('data-i18n-html');
+    if(translations[lang][key] !== undefined) el.innerHTML = translations[lang][key];
+  });
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el){
+    var key = el.getAttribute('data-i18n-placeholder');
+    if(translations[lang][key] !== undefined) el.placeholder = translations[lang][key];
+  });
+  document.querySelectorAll('[data-lang-link]').forEach(function(el){
+    el.classList.toggle('active', el.getAttribute('data-lang-link') === lang);
+  });
+}
+
+function render(){ applyLang(currentLang()); }
+
+window.addEventListener('hashchange', render);
+render();
+
+/* ---------- RSVP submit ---------- */
+var formLoadedAt = Date.now();
+
+document.getElementById('add-guest-toggle').addEventListener('change', function(){
+  var on = this.checked;
+  document.getElementById('guest2-name-field').hidden = !on;
+  document.getElementById('guest2-dietary-field').hidden = !on;
+  if(!on){
+    document.getElementById('guest2-name').value = '';
+    document.getElementById('guest2-dietary').value = '';
+  }
+});
+
+document.getElementById('rsvp-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  var form = this;
+  var btn = form.querySelector('.rsvp-submit');
+  var lang = currentLang();
+
+  var isBot = form._gotcha.value.trim() !== '' || (Date.now() - formLoadedAt) < 3000;
+
+  function showThanks(){
+    btn.textContent = translations[lang]['form.thanks'];
+    btn.disabled = true;
+  }
+
+  if(isBot){
+    showThanks();
+    return;
+  }
+
+  var coming = comingYes.checked ? 'yes' : (comingNo.checked ? 'no' : '');
+  var addGuest = document.getElementById('add-guest-toggle').checked;
+  var data = {
+    name: document.getElementById('full-name').value.trim(),
+    guestName: addGuest ? document.getElementById('guest2-name').value.trim() : '',
+    coming: coming,
+    dietary: dietaryField.value.trim(),
+    guestDietary: addGuest ? document.getElementById('guest2-dietary').value.trim() : '',
+    song: songField.value.trim(),
+    lang: lang
+  };
+
+  btn.disabled = true;
+
+  fetch('https://formspree.io/f/mdeeqnoa', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  }).then(function(res){
+    if(!res.ok) throw new Error('submit failed');
+    showThanks();
+  }).catch(function(){
+    btn.disabled = false;
+    btn.textContent = translations[lang]['form.submit'];
+    alert(lang === 'es' ? 'No pudimos enviar tu respuesta. Intenta de nuevo.' : lang === 'it' ? 'Non siamo riusciti a inviare la tua risposta. Riprova.' : 'We could not send your response. Please try again.');
+  });
+});
+
+var comingYes = document.getElementById('coming-yes');
+var comingNo = document.getElementById('coming-no');
+var dietaryField = document.getElementById('dietary');
+var songField = document.getElementById('song');
+
+function syncComingState(changed){
+  if(changed === comingYes && comingYes.checked) comingNo.checked = false;
+  if(changed === comingNo && comingNo.checked) comingYes.checked = false;
+
+  var notComing = comingNo.checked;
+  dietaryField.disabled = notComing;
+  songField.disabled = notComing;
+  if(notComing){
+    dietaryField.value = '';
+    songField.value = '';
+  }
+}
+
+comingYes.addEventListener('change', function(){ syncComingState(comingYes); });
+comingNo.addEventListener('change', function(){ syncComingState(comingNo); });
+</script>
