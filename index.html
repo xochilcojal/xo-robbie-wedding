@@ -535,6 +535,33 @@ function render(){ applyLang(currentLang()); }
 window.addEventListener('hashchange', render);
 render();
 
+/* ---------- HERO WIDTH SYNC (desktop) ---------- */
+var heroVideoEl = document.querySelector('.hero-video');
+var heroTopEl = document.querySelector('.hero-top');
+var heroBottomEl = document.querySelector('.hero-bottom');
+
+function syncHeroWidths(){
+  if(window.innerWidth < 992){
+    heroTopEl.style.width = '';
+    heroTopEl.style.margin = '';
+    heroBottomEl.style.width = '';
+    heroBottomEl.style.margin = '';
+    return;
+  }
+  var w = heroVideoEl.getBoundingClientRect().width;
+  if(w > 0){
+    heroTopEl.style.width = w + 'px';
+    heroTopEl.style.margin = '0 auto';
+    heroBottomEl.style.width = w + 'px';
+    heroBottomEl.style.margin = '0 auto';
+  }
+}
+
+heroVideoEl.addEventListener('loadedmetadata', syncHeroWidths);
+window.addEventListener('resize', syncHeroWidths);
+window.addEventListener('load', syncHeroWidths);
+syncHeroWidths();
+
 /* ---------- RSVP submit ---------- */
 var formLoadedAt = Date.now();
 
