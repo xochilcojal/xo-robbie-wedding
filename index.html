@@ -296,7 +296,7 @@ a{color:inherit;}
     padding-bottom:3rem;
   }
   .hero-bounds{max-width:450px; justify-content:center; gap:1.5rem;}
-  .hero-video-wrap{flex:none; justify-content:flex-start;}
+  .hero-video-wrap{flex:none; justify-content:center;}
   .hero-video-crop{height:auto; aspect-ratio:2434/3406; width:calc(100% - 10px); min-width:0;}
   .rsvp-left{padding:0;}
   .program-desc{font-size:14px;}
@@ -549,20 +549,13 @@ function render(){ applyLang(currentLang()); }
 window.addEventListener('hashchange', render);
 render();
 
-/* ---------- HERO WIDTH SYNC (desktop) ---------- */
+/* ---------- HERO WIDTH SYNC ---------- */
 var heroVideoEl = document.querySelector('.hero-video');
 var heroVideoCropEl = document.querySelector('.hero-video-crop');
 var heroTopEl = document.querySelector('.hero-top');
 var heroBottomEl = document.querySelector('.hero-bottom');
 
 function syncHeroWidths(){
-  if(window.innerWidth < 992){
-    heroTopEl.style.width = '';
-    heroTopEl.style.margin = '';
-    heroBottomEl.style.width = '';
-    heroBottomEl.style.margin = '';
-    return;
-  }
   var w = heroVideoCropEl.getBoundingClientRect().width;
   if(w > 0){
     heroTopEl.style.width = w + 'px';
