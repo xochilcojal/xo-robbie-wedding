@@ -116,11 +116,21 @@ a{color:inherit;}
   min-height:0;
   overflow:hidden;
 }
-.hero-video{
+.hero-video-crop{
+  position:relative;
   height:600px;
   width:auto;
   min-width:460px;
   max-width:100%;
+  overflow:hidden;
+  display:block;
+}
+.hero-video{
+  position:absolute;
+  top:-2%;
+  left:-2%;
+  width:104%;
+  height:104%;
   object-fit:cover;
   display:block;
 }
@@ -287,7 +297,7 @@ a{color:inherit;}
   }
   .hero-bounds{max-width:450px; justify-content:center; gap:1.5rem;}
   .hero-video-wrap{flex:none; justify-content:flex-start;}
-  .hero-video{height:100%; width:calc(100% - 10px); min-width:0;}
+  .hero-video-crop{height:auto; aspect-ratio:2434/3406; width:calc(100% - 10px); min-width:0;}
   .rsvp-left{padding:0;}
   .program-desc{font-size:14px;}
 }
@@ -304,7 +314,9 @@ a{color:inherit;}
       <span data-i18n="hero.save">Save</span><span data-i18n="hero.the">the</span><span data-i18n="hero.date">date</span>
     </div>
     <div class="hero-video-wrap">
-      <video class="hero-video" src="hero-video.mp4" autoplay muted loop playsinline></video>
+      <div class="hero-video-crop">
+        <video class="hero-video" src="hero-video.mp4" autoplay muted loop playsinline></video>
+      </div>
     </div>
     <div class="hero-row hero-bottom script">
       <span data-i18n="hero.dateline">April 16 2027</span><span class="dot">&middot;</span><span>Tenuta Monacelle</span>
@@ -539,6 +551,7 @@ render();
 
 /* ---------- HERO WIDTH SYNC (desktop) ---------- */
 var heroVideoEl = document.querySelector('.hero-video');
+var heroVideoCropEl = document.querySelector('.hero-video-crop');
 var heroTopEl = document.querySelector('.hero-top');
 var heroBottomEl = document.querySelector('.hero-bottom');
 
@@ -550,7 +563,7 @@ function syncHeroWidths(){
     heroBottomEl.style.margin = '';
     return;
   }
-  var w = heroVideoEl.getBoundingClientRect().width;
+  var w = heroVideoCropEl.getBoundingClientRect().width;
   if(w > 0){
     heroTopEl.style.width = w + 'px';
     heroTopEl.style.margin = '0 auto';
